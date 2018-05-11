@@ -252,6 +252,9 @@ bool ChessBoard::CanMoveXIANG(int row, int col, int move2row, int move2col)
         return false;
     if((row < 5 && move2row >=5) || (row >= 5 && move2row < 5))
         return false;
+    //象眼
+    if(HasPiece((row + move2row) / 2, (col + move2col) / 2))
+        return false;
     return true;
 }
 
